@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.34.0/min/vs/loader.js"></script>
+    <script src="js/main.js" defer></script> <!-- Ensure this path is correct -->
+</head>
+<body>
+    <div id="container" style="margin-top: 40px;">
+        <div id="file-explorer">
+            <button id="import-file">➡️ Import</button>
+            <button id="export-file">⬅️ Export</button>
+            <button id="create-file">📄 Create File</button>
+            <button id="create-folder">📁 Create Folder</button>
+            <button id="upload-file">📤 Upload File</button>
+            <ul id="file-list"></ul>
+        </div>
+        <div id="editor-container">
+            <div id="current-file">Please select a file to get started, Or create one</div>
+            <div id="editor" style="width: 100%; height: 100%;"></div>
+            <button id="run-code">📡 Live Testing</button>
+        </div>
+    </div>
+    <input type="file" id="upload-input" style="display: none;">
+</body>
+</html>

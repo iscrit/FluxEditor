@@ -1,0 +1,273 @@
+/* styles/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+#container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#file-explorer {
+    width: 250px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 10px;
+    overflow-y: auto;
+    border-right: 1px solid #444;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+#file-explorer button {
+    display: block;
+    width: 100%;
+    background: #007acc;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+}
+
+#file-explorer button:hover {
+    background: #005a9e;
+}
+
+#file-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+.file-item {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.file-item:hover {
+    background: #333;
+}
+
+.selected {
+    background: #007acc;
+    color: #fff;
+}
+
+#editor-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure container takes full height */
+    box-sizing: border-box; /* Ensure padding and border are included in height */
+}
+
+#current-file {
+    background: #333;
+    color: #d4d4d4;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+    overflow: hidden; /* Prevent overflow */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-overflow: ellipsis; /* Add ellipsis for overflow text */
+}
+
+#editor {
+    flex: 1;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    height: calc(100% - 50px); /* Adjust height to fit within container */
+    box-sizing: border-box; /* Ensure padding and border are included in height */
+}
+
+#run-code {
+    background: #007acc;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+#run-code:hover {
+    background: #005a9e;
+}
+
+#upload-file {
+    background: #007acc;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+}
+
+#upload-file:hover {
+    background: #005a9e;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Add this to your CSS file */
+
+/* General Popup Styles */
+.alert-popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    width: 300px;
+}
+
+.alert-popup-content {
+    text-align: center;
+}
+
+.alert-popup-close {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.alert-popup-close:hover {
+    background-color: #0056b3;
+}
+
+/* Context Menu Styles */
+.context-menu {
+    position: absolute;
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 10px;
+    width: 150px;
+    list-style: none;
+}
+
+.context-menu .context-menu-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.context-menu .context-menu-option:hover {
+    background-color: #555;
+}
+
+.context-menu .context-menu-option input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.context-menu .context-menu-option label {
+    cursor: pointer;
+}
+
+.custom-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-content button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background: #0056b3;
+}
+
+/* File Dropdown Styles */
+#file-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 10px;
+    display: none;
+    flex-direction: column;
+}
+
+#file-dropdown button {
+    background: #007acc;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#file-dropdown button:hover {
+    background: #005a9e;
+}
+
+#file-dropdown.show {
+    display: flex;
+}
+
+
+.header {
+    display: flex;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.header button {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.header button:hover {
+    text-decoration: underline;
+}
